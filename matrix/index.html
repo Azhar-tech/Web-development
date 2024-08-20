@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrix</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+         
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        header{
+            width: 100vw;
+            height: 100vh;
+        }
+        .navigation{
+            display: flex;
+            width: 100%;
+            height: 13%;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            justify-content: space-around;
+            position: fixed;
+        }
+        .navigation .logo{
+            display: flex;
+            width: 15%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation .logo img{
+            display: flex;
+            width: 62px;
+            height: 60%;
+            padding: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+        .links{
+            display: flex;
+            width: 55%;
+            gap: 30px;
+            justify-content: left;
+            
+        }
+        .links a{
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: poppins;
+            position: relative;
+        }
+        .button{
+            width: 10%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin: 0;
+        }
+        .button a{
+            text-decoration: none;
+            color: black;
+            font-family: poppins;
+            font-size: 12px;
+            padding: 10px 20px;
+            background-color: rgb(91, 205, 118);
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .button a:hover{
+            background-color: white;
+            transform: rotate(5deg);
+            transition: 0.5s;
+        }
+        .links .hm{
+            color: rgb(91, 205, 118);
+        }
+        .links a::after{
+            content: "";
+            width: 0;
+            height: 2px;
+            background: rgb(91, 205, 118);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transition: width 0.3s ease;
+        }
+        .links a:hover::after{
+            width: 100%;
+        }
+        .links a:hover{
+            color: rgb(91, 205, 118);
+
+        }
+        section{
+            width: 100%;
+            height: 87%;
+            display: flex;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+        }
+        section .meeting{
+            display: flex;
+            background: linear-gradient(rgba(25, 25, 34, 0.5), rgba(49, 49, 61, 0.8)),url(MG_0295-scaled-1.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-top: 190px;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            gap:120px;
+            justify-content: center;
+        }
+        section .meeting img{
+            width: 40%;
+            height: 100%;
+            padding: 120px 90px;
+        }
+        section .meeting .content{
+            width: 30%;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+        }
+        section .meeting .content h2{
+            font-size: 77px;
+            font-family: poppins;
+            color: #f1f1f1;
+            line-height: 80px;
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 2px;
+        }
+        section .meeting .content hr{
+            margin-top: 20px;
+            width: 200px;
+            height: 4px;
+            color: white;
+            background-color: white;
+        }
+        section .meeting .content p{
+            font-family: poppins;
+            margin-top: 20px;
+            color: white;
+    
+        }
+        section .meeting .content .button{
+            width: 100%;
+            height: 100px;
+            gap: 30px;
+        }
+        section .meeting .content .button a{
+            padding: 10px 30px;
+            border-radius: 25px;
+            font-size: 15px;
+            font-family: poppins;
+            font-weight: bold;
+            color: white;
+        }
+        section .meeting .content .button a:nth-child(2){
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        section .meeting .content .button a:nth-child(1){
+            color: black;
+        }
+        section .meeting .content .button a:hover {
+            background-color: white;
+            transition: 0.5s ease;
+
+        }
+        section .meeting .content .button a:nth-child(2):hover{
+            color: black;
+        }
+        article{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        article .intro{
+            width: 90%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        article .intro .images{
+            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40%;
+            
+
+        }
+        article .intro .images .subimg{
+            display: flex;
+            width: 100%;
+            height: auto;
+            gap: 40px;
+        }
+        article .intro .images .subimg img{
+            width: 270px;
+            border-radius: 30px;
+        }
+        article .intro .images img{
+            border-radius: 30px;
+            width: 100%;
+
+        }
+        article .intro .content{
+            margin-top: 50px;
+            width: 40%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+
+        }
+        article .intro .content h6{
+            text-transform: uppercase;
+            font-size: 22px;
+            font-family: poppins;
+            color: rgb(53, 165, 38);
+            font-weight: 400;
+        }
+        article .intro .content h2{
+            color: #223645;
+            font-family: "Poppins", Sans-serif;
+            font-size: 37px;
+            font-weight: 700;
+            line-height: 47px;
+}
+article .intro .content p{
+    font-size: 15px;
+    font-family: poppins;
+    color: #223645;
+    padding-top: 10px;
+    line-height: 27px;
+}
+.box {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: poppins;
+}
+
+.achievements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.achievements li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 40px; 
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 14px; /* Adjust font size to fit inside the circle */
+    color: #4caf50;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%; 
+    width: 20px; 
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signature-section .signature {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 3px solid #4caf50;
+    padding-top: 10px;
+
+}
+
+.signature img {
+    width: 80px;
+    height: auto;
+}
+
+.details {
+    margin-left: 15px;
+}
+
+.details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.box p {
+    text-align: center;
+    margin: 0;
+    color: #666;
+    padding-left: 180px;
+}
+.initiative{
+    width: 100vw;
+    height: auto;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(MG_0271-scaled-1.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.initiative .hed{
+    font-size: 35px;
+    font-weight: bold;
+    font-family: poppins;
+    text-transform: uppercase;
+    margin-top: 50px;
+    color: white;
+    margin-bottom: 30px;
+}
+.initiative .boxes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.initiative .boxes .box1{
+    width: 370px;
+    height: 420px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+}
+.initiative .boxes .box1 img{
+    width: 50%;
+}
+.initiative .boxes .box1 h3{
+    font-family: poppins;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.initiative .boxes .box1 p{
+    font-size: 15px;
+    font-family: poppins;
+    margin-top: 10px;
+    line-height: 25px;
+}
+
+.initiative .boxes .box2{
+    width: 370px;
+    height: 420px;
+    background-color: white;
+    margin: 20px;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
+.initiative .boxes .box2 img{
+    width: 50%;
+}
+.initiative .boxes .box2 h3{
+    font-family: poppins;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.initiative .boxes .box2 p{
+    font-size: 15px;
+    font-family: poppins;
+    margin-top: 10px;
+    line-height: 25px;
+}
+   
+.initiative .boxes .box3{
+    width: 370px;
+    height: 420px;
+    background-color: white;
+    margin: 20px;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
+.initiative .boxes .box3 img{
+    width: 50%;
+}
+.initiative .boxes .box3 h3{
+    font-family: poppins;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.initiative .boxes .box3 p{
+    font-size: 15px;
+    font-family: poppins;
+    margin-top: 20px;
+    line-height: 25px;
+}
+   
+.initiative .boxes .box4{
+    width: 370px;
+    height: 420px;
+    background-color: white;
+    margin: 20px;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
+.initiative .boxes .box4 img{
+    width: 50%;
+}
+.initiative .boxes .box4 h3{
+    font-family: poppins;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.initiative .boxes .box4 p{
+    font-size: 15px;
+    font-family: poppins;
+    margin-top: 20px;
+    line-height: 25px;
+}
+   
+.initiative .boxes .box5{
+    width: 370px;
+    height: 420px;
+    background-color: white;
+    margin: 20px;
+    padding: 40px 20px 40px 20px;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+}
+.initiative .boxes .box5 img{
+    width: 50%;
+}
+.initiative .boxes .box5 h3{
+    font-family: poppins;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.initiative .boxes .box5 p{
+    font-size: 15px;
+    font-family: poppins;
+    margin-top: 20px;
+    line-height: 25px;
+}
+.event{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: 30px;
+}
+.event .event1{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+}
+.event .event1 h6{
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: poppins;
+    color: #517c52;
+}
+.event .event1 h2{
+    font-family: poppins;
+    font-size: 40px;
+    margin-top: 10px;
+}
+.event .event2{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 10px;
+}
+.event .event2 p{
+    font-size: 14px;
+    font-size: 400;
+    line-height: 27px;
+    color: #223645;
+    font-family: poppins;
+
+}
+.event .event2 a{
+    background-color: rgb(19,204,118);
+    width: 100px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: black;
+    margin-top: 30px;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+}
+.eventimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+}
+.eventimages{
+    width: 80%;
+}
+.eventimg img{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    margin: 5px;
+    transition: transform 0.3s ease;
+
+}
+.eventimg img:hover{
+    transform: scale(0.9);
+}
+.partners{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(39, 36, 36, 0.8),rgba(39, 37, 37, 0.8)),url(MG_0021-scaled.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.partners h6{
+    margin-top: 100px;
+    font-size: 22px;
+    font-family: poppins;
+    font-weight: 500;
+    color: #4caf50;
+}
+.partners h2{
+    font-size: 37px;
+    font-family: poppins;
+    font-weight: 800;
+    color: white;
+}
+.partners .slides{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(250px*8);
+    animation: scroll 5s linear infinite;
+}
+.partners .slides img{
+    width: 25%;
+    
+}
+.partners .slides .dil{
+    padding-bottom: 150px;
+    padding-right: 100px;
+
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px*4));
+
+    }
+
+}
+.founder{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    padding: 60px 0px 0px;
+    background-color: white;
+    font-family: poppins;
+    gap: 20px;
+}
+.founder .f1{
+    width: 25%;
+    font-family: poppins;
+    padding-top: 40px;
+}
+.founder .f1 h2{
+    font-size: 30px;
+}
+.founder .f1 p{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+}
+.founder .f2{
+    width: 25%;
+    font-family: poppins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.founder .f2 img{
+    width: 80%;
+
+}
+.founder .f3{
+    width: 25%;
+    font-family: poppins;
+    margin-left: 10px;
+    padding-top: 40px;
+}
+.founder .f3 p:nth-child(3){
+    color: #9E9E9E;
+    font-family: "Poppins", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+.founder .f3 p:nth-child(1){
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 27px;
+}
+.founder .f3 h2{
+    margin-top: 10px;
+}
+.blogs{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),url(MG_0310-scaled.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 190vh;
+    overflow: hidden; 
+    flex-wrap: wrap;
+}
+.blogs h2:nth-child(1){
+    text-transform: uppercase;
+    color: #4caf50;
+    font-weight: 500;
+    padding-top: 100px;
+    font-family: poppins;
+}
+.blogs h2:nth-child(2){
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    padding-top: 10px;
+    font-family: poppins;
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+.blogs .blog{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:20px;
+    padding-top: 0px ;
+}
+.blogs .blog .blog1{
+    width: 26%;
+    height: 520px;
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+.blogs .blog .blog1 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog1 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog1 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog1 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.blogs .blog .blog2{
+    width: 26%;
+    height: 550px;
+    background-color: white;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+.blogs .blog .blog2 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog2 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog2 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog2 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.blogs .blog .blog3{
+    width: 26%;
+    height: 520px;
+    background-color: white;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.blogs .blog .blog3 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog3 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog3 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog3 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.blogs .blog .blog4{
+    width: 26%;
+    height: 520px;
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+.blogs .blog .blog4 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog4 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog4 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog4 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.blogs .blog .blog5{
+    width: 26%;
+    height: 550px;
+    background-color: white;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+.blogs .blog .blog5 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog5 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 17px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog5 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog5 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.blogs .blog .blog6{
+    width: 26%;
+    height: 520px;
+    background-color: white;
+    padding-bottom: 5px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+.blogs .blog .blog6 img{
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    background-position: center;
+}
+.blogs .blog .blog6 h2{
+    text-transform: capitalize;
+    color: black;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: poppins;
+    font-weight: 800;
+}
+.blogs .blog .blog6 p{
+    font-size: 15px;
+    padding: 0px 20px;
+    font-family: poppins;
+    color: #9E9E9E;
+    padding-bottom: 20px;
+}
+.blogs .blog .blog6 a{
+    text-decoration: none;
+    font-size: 18px;
+    padding: 20px;
+    color: #4caf50;
+}
+.media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 400px;
+}
+.media .media1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+}
+.media .media1 h2:nth-child(1){
+    color: #4caf50;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: poppins;
+}
+.media .media1 h2:nth-child(2){
+    font-family: poppins;
+    font-size: 35px;
+    font-weight: 700;
+    color: black;
+}
+.media .media2{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.media .media2 .mimg1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+.media .media2 .mimg1 img:nth-child(1){
+    width: 170px;
+    height: 40px;
+    margin-right: 30px;
+}
+.media .media2 .mimg1 img:nth-child(2){
+    width: 150px;
+    height: 70px;
+    margin-right: 30px;
+}
+.media .media2 .mimg1 img:nth-child(3){
+    width: 80px;
+    height: 80px;
+    margin-right: 30px;
+}
+.media .media2 .mimg2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    gap: 50px;
+}
+.media .media2 .mimg2 img:nth-child(1){
+    width: 130px;
+    height: 100px;
+}
+.media .media2 .mimg2 img:nth-child(2){
+    width: 100px;
+    height: 110px;
+    margin-left: 10px;
+}
+.media .media2 .mimg2 img:nth-child(3){
+    width: 105px;
+    height: 105px;
+    margin-left: 10px;
+}
+footer{
+    background-color: black;
+    width: 100vw;
+    height: 60vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+footer .footer1{
+    width: 20%;
+    height: 300px;
+    margin-top: 20px;
+}
+footer .footer1 img{
+    width: 70%;
+    height: 70px;
+    padding: 0px 50px;
+}
+footer .footer1 p{
+    font-size: 13px;
+    font-family: poppins;
+    padding: 20px 50px;
+    color: #d1cdcd;
+}
+footer .footer2{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin-top: 20px;
+}
+footer .footer2 h2{
+    font-family: poppins;
+    color: #4caf50;
+    padding-bottom: 20px;
+    
+}
+footer .footer2 a{
+    text-decoration: none;
+    color: white;
+    font-family: poppins;
+    line-height: 35px;
+    color: #d1cdcd;
+}
+footer .footer2 a:hover{
+    color: #4caf50;
+    transition: 0.5s ease;
+}
+footer .footer3{
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin-top: 20px;
+}
+footer .footer3 h2{
+    font-family: poppins;
+    color: #4caf50;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+
+}
+footer .footer3 a{
+    text-decoration: none;
+    color: #d1cdcd;
+    font-family: poppins;
+    padding: 0px 20px;
+    line-height: 30px;
+}
+footer .footer3 a:hover{
+    color: #4caf50;
+    transition: 0.5s ease;
+}
+footer .footer4{
+    width: 15%;
+    height: 300px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+footer .footer4 p{
+    color: #d1cdcd;
+    line-height: 25px;
+    font-family: poppins;
+
+}
+footer .footer4 p:nth-child(2){
+    padding-bottom: 20px;
+}
+footer .footer4 a{
+    text-decoration: none;
+    color: white;
+    font-family: poppins;
+    padding: 0px;
+    font-weight: bold;
+
+}
+footer .footer4 a:hover{
+    color: #4caf50;
+    transition: 0.5s ease;
+}
+footer .footer4 .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+footer .footer4 .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+        }
+
+
+   
+        
+
+        
+    </style
+    
+    
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="logo">
+                <img src="https://metrix.pk/wp-content/uploads/2023/07/cropped-matrix-logo-1.png">
+            </div>
+            <div class="links">
+                <a class="hm" href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Sponsors</a>
+                <a href="#">Parter with us</a>
+                <a href="#">Contact</a>
+                <a href="#">Blogs</a>
+                <a href="#">Media gallery</a>
+                <a href="#">JOIN US</a>
+            </div>
+            <div class="button">
+                <a href="#">Get Tickets</a>
+            </div>
+        </nav>
+        <section>
+            <div class="meeting">
+                <img src="https://metrix.pk/wp-content/uploads/2024/04/M-white-01-1-e1712334070426-1024x818.png">
+                <div class="content">
+                    <h2>Metrix <span style="color: rgb(91, 205, 118);">Pakistan</span></h2>
+                    <hr>
+                    <p>Let’s Make a Productive Pakistan</p>
+                    <div class="button">
+                        <a href="#">Contact us</a>
+                        <a href="#">Partner With Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </header>
+    <article>
+        <div class="intro">
+            <div class="images">
+                <div class="subimg">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/MG_0456-1536x1024-1-1024x683.jpg">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/MG_0412-300x200-1.jpg">
+                    </div>
+                    <img src="https://metrix.pk/wp-content/uploads/2023/07/MG_0310-1024x683.jpg">
+            </div>
+             <div class="content">
+                <h6>Introduction</h6>
+                <h2>KNOW MORE ABOUT METRIX PAKISTAN</h2>
+                <p>Metrix Pakistan is a pioneering organization dedicated to fostering technological education and entrepreneurship in the rural areas of Pakistan. Founded by Hassan Nisar in May 2022, its mission is to create a thriving ecosystem in underprivileged regions of Pakistan. Through innovative initiatives, Metrix Pakistan aims to empower local communities by providing access to technology and educational resources, thereby catalyzing economic development and social progress.</p>
+                     <div class="box">
+                        <ul class="achievements">
+                            <li><span class="checkmark" style="background-color: white; border: 2px solid black;">✔</span>Organized Khyber Pakhtunkhwa's largest tech summit in October 2022, fostering innovation and collaboration.</li>
+                            <li><span class="checkmark">✔</span>Conducted free medical camps to provide healthcare to underserved communities.</li>
+                            <li><span class="checkmark">✔</span>Hosted a conference on cyberspace safety with the Pakistan Telecommunication Authority to promote digital literacy and cybersecurity awareness.</li>
+                        </ul>
+                        <div class="signature-section">
+                            <div class="signature">
+                                <img src="https://metrix.pk/wp-content/uploads/2024/04/bloggable-img14.png" alt="Signature of Hassan Nisar" >
+                                <h3>Hassan Nisar</h3>
+                            </div>
+                            </div>
+                            <p>Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <div class="initiative">
+            <div class="hed">OUR INITIATIVES</div>
+            <div class="boxes">
+                <div class="box1">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/4-1-300x107-1.png"><span style="position: relative; float: right; font-size: 25px; font-family: poppins;text-align: center; font-weight: bolder;color: #596e59;">.01</span>
+                    <h3>METRIX WOMEN EMPOWERMENT</h3>
+                    <p>Women Empowerment Sessions: Metrix Tech Summit also featured women empowerment sessions to provide a platform for women in the tech industry to share their experiences and insights, and to inspire and empower more women to pursue careers in technology.</p>
+                    </div>
+                <div class="box2">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/4-1-300x107-1.png"><span style="position: relative; float: right; font-size: 25px; font-family: poppins;text-align: center; font-weight: bolder;color: #596e59;">.02</span>
+                    <h3>METRIX TECH SUMMIT</h3>
+                    <p>Metrix Tech Summit served as a platform for knowledge sharing, learning, and networking for technology enthusiasts, entrepreneurs, and business professionals. The event aimed to promote digital means of earning, such as freelancing and ecommerce, and introduce emerging technologies such as Web3, Metaverse,.</p>
+                    </div>
+                <div class="box3">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/4-1-300x107-1.png"><span style="position: relative; float: right; font-size: 25px; font-family: poppins;text-align: center; font-weight: bolder;color: #596e59;">.03</span>
+                    <h3>METRIX FREE MEDICAL CAMPS</h3>
+                    <p>The medical camp organized by Metrix Pakistan, Act of Kindness, and Medkhidmat was a huge success, with over 500 villagers in attendance. The camp offered a variety of health services and was greatly appreciated by the local community. Metrix Pakistan is focused on improving the health, technology.</p>
+                    </div>
+                <div class="box4">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/4-1-300x107-1.png"><span style="position: relative; float: right; font-size: 25px; font-family: poppins;text-align: center; font-weight: bolder;color: #596e59;">.04</span>
+                    <h3>METRIX TECH FEST</h3>
+                    <p>Innovation meets celebration at the Metrix Tech Fest. This vibrant carnival of creativity is where groundbreaking ideas find their stage. Entrepreneurs and enthusiasts from diverse backgrounds showcase their ingenuity, creating a tapestry of innovation that spans from the avant-garde to the accessible.</p>
+                    </div>
+                <div class="box5">
+                    <img src="https://metrix.pk/wp-content/uploads/2024/04/4-1-300x107-1.png"><span style="position: relative; float: right; font-size: 25px; font-family: poppins;text-align: center; font-weight: bolder;color: #596e59;">.05</span>
+                    <h3>METRIX YOUTH SUMMIT</h3>
+                    <p>At the Metrix Youth Summit, celebration meets innovation in a dynamic fusion. It's a vibrant carnival of creativity where groundbreaking ideas find their stage. Entrepreneurs and enthusiasts from diverse backgrounds showcase their ingenuity, creating a tapestry of innovation that spans from the avant-garde to the accessible.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event">
+                <div class="event1">
+                    <h6>EVENT GALLERY</h6>
+                    <h2>COLLECTION OF IMAGES FROM PAST EVENTS!!></h2>
+                    </div>
+                <div class="event2">
+                    <p>COLLECTION OF IMAGES FROM PAST EVENTS!! Our recent events were vibrant gatherings of innovation, featuring diverse attendees and dynamic discussions led by 50+ industry leaders. They provided valuable platforms for startups to showcase groundbreaking ideas and connect with potential investors and partners.</p>
+                    <a href="#">Gallery</a>
+                </div>
+            </div>
+                <div class="eventimg">
+                    <div class="eventimages">
+                        <img src="https://metrix.pk/wp-content/uploads/2024/04/MG_0295-scaled-1-700x466.jpg">
+                        <img  src="https://metrix.pk/wp-content/uploads/2024/04/MG_0456-1536x1024-1-700x466.jpg">
+                        <img  src="https://metrix.pk/wp-content/uploads/2023/11/WhatsApp-Image-2023-11-30-at-4.12.39-PM-1-700x466.jpeg">
+                        <img src="https://metrix.pk/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-22-at-1.41.41-PM-700x466.jpeg">
+                        <img src="https://metrix.pk/wp-content/uploads/2023/07/MG_1095-700x466.jpg">
+                        <img src="https://metrix.pk/wp-content/uploads/2023/07/MG_0262-700x466.jpg">
+                        <img src="https://metrix.pk/wp-content/uploads/2023/07/MG_0310-700x466.jpg">
+                        <img src="https://metrix.pk/wp-content/uploads/2023/07/0518094304eb140-700x466.jpg">
+                    </div>
+                    
+                </div>
+
+                    <div class="partners">
+                        <h6>OUR PARTNERS</h6>
+                        <h2>SPONSERS AND PARTNERS</h2>
+                        <div class="slides">
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/governer-kpk-white-1.png">
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/251496805_225123133053725_7914764125115270768_n-1-2.png">
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/binance.png">
+                            <img class="dil" src="https://metrix.pk/wp-content/uploads/2024/04/DZ-Logotype-2.png">
+
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/governer-kpk-white-1.png">
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/251496805_225123133053725_7914764125115270768_n-1-2.png">
+                            <img src="https://metrix.pk/wp-content/uploads/2024/04/binance.png">
+                            <img class="dil" src="https://metrix.pk/wp-content/uploads/2024/04/DZ-Logotype-2.png">
+                        </div>
+                    </div>
+                        <div class="founder">
+                            <div class="f1">
+                                <h2>Meet <span style="color: #4caf50;"> Our </span> Founder & <span style="color: #4caf50;">CEO</span></h2>
+                                <p>At Metrix Pakistan, we believe in the transformative power of technology. Our goal is to empower the youth of KP by providing them with the tools to excel in this digital age. Through initiatives like the Metrix Tech Summit, Tech Fest, and Pakistan Medical Camps, we’re creating spaces for innovation, learning, and growth.Together, let’s build a future where technology bridges gaps, fuels creativity, and drives progress.</p>    
+                            </div>
+                            <div class="f2">
+                                <img src="https://metrix.pk/wp-content/uploads/2017/02/1655531005228.jpeg">
+                                </div>
+                            <div class="f3">
+                                <p>As the founder & CEO of Metrix Pakistan, I invite you to join us on this remarkable journey. Together, let’s chart a path towards a future where technology is a tool for empowerment, education is a universal right, and innovation is a way of life. Our success story is shaped by the communities we uplift, the young minds we nurture, and the partnerships we forge</p>
+                                <h2>Hassan Nisar</h2>
+                                <p>Founder & CEO Metrix Pakistan</p>
+
+                            </div>
+                        </div>
+
+                        <div class="blogs">
+                            <h2>OUR BLOGS</h2>
+                            <h2>DAILY DOSE OF METRIX BLOGS</h2>
+                            <div class="blog">
+                                <div class="blog1">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-04-at-9.39.51-PM.jpeg">
+                                    <h2>Metrix Pakistan Organized KPK’s Biggest Youth Summit in Abbottabad</h2>
+                                    <p>Metrix Pakistan in collaboration with the Directorate of Youth Affairs, Government of KPK organised KPK’s biggest Youth...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                                <div class="blog2">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/07/aaj-news-partner-metrix-pk-01.png">
+                                    <h2>METRIX PAKISTAN ANNOUNCES PARTNERSHIP WITH AAJ NEWS AS OFFICIAL MEDIA PARTNER</h2>
+                                    <p>Metrix Pakistan is proud to announce its partnership with Aaj News, a leading 24-hour Pakistani news television...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                                <div class="blog3">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/04/MG_0295-scaled-1.jpg">
+                                    <h2>Metrix Pakistan Youth Summit KPK’s Biggest Youth Event Returns</h2>
+                                    <p>The Directorate of Youth Affairs, Government of Khyber Pakhtunkhwa, and Metrix Pakistan are proud to announce the...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                                <div class="blog4">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/06/metrix-career-counseling-workshop-photos-file-web-file-01.png">
+                                    <h2>Metrix Pakistan Organizes Day Long Career Development Workshop</h2>
+                                    <p>Metrix Pakistan, in collaboration with Hazara University Mansehra, organized a one-day workshop on career development at the...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                                <div class="blog5">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/06/metrix-career-counseling-workshop-web-01.png">
+                                    <h2>Metrix Pakistan Presents Exclusive Career Development Workshop at Hazara University Mansehra</h2>
+                                    <p>Metrix Pakistan is proud to present a unique opportunity for growth and development with its exclusive workshop,...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                                <div class="blog6">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/06/metrix-pakistan-and-jinnah-college-mou-scaled.jpeg">
+                                    <h2>Metrix Pakistan and Jinnah College Mansehra Forge Strategic Partnership</h2>
+                                    <p>Metrix Pakistan & Jinnah College Mansehra join forces to promote education & technology in the region. In...</p>
+                                    <a href="#">Read more</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="media">
+                            <div class="media1">
+                                <h2>MEDIA OUTRAECH</h2>
+                                <h2>Featured In Pakistan's Famous Magazines!!</h2>
+                                </div>
+                            <div class="media2">
+                                <div class="mimg1">
+                                    <a href="https://www.dawn.com/"><img src="https://metrix.pk/wp-content/uploads/2024/04/dawn-news.png"></a>
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/04/the-nation.png">
+                                    <img src="https://metrix.pk/wp-content/uploads/2024/04/dt-canva.png">
+                               </div>
+                               <div class="mimg2">
+                                <a href="https://www.dawn.com/"><img src="https://metrix.pk/wp-content/uploads/2024/04/hum-canva.png"></a>
+                                <img src="https://metrix.pk/wp-content/uploads/2024/04/such-news.png">
+                                <img src="https://metrix.pk/wp-content/uploads/2024/06/images.png">
+                                </div>
+                            </div>
+                        </div>
+                        <footer>
+                            <div class="footer1">
+                                <img src="https://metrix.pk/wp-content/uploads/2024/04/1-300x125-1.png">
+                                <p>Metrix Pakistan is an organization that focuses on the development of technology in Pakistan, particularly in the rural areas of Khyber Pakhtunkhwa (KP).</p>
+                                </div>
+                            <div class="footer2">
+                                <h2>Organization</h2>
+                                <a href="#">About</a>
+                                <a href="#">Contact</a>
+                                <a href="#">Speakers</a>
+                                <a href="#">Sponsers</a>
+                                <a href="#">Latest Press Release</a>
+                                </div>
+                            <div class="footer3">
+                                <h2>Quick Links</h2>
+                                <a href="#">Metrix Tech Summit 2022 Summary</a>
+                                <a href="#">Metrix Tech Fest 2023 Press Release</a>
+                                <a href="#">Metrix Pakistan Medical Camp Chamhad Abbottabad Summary </a>
+                                <a href="#">Metrix Pakistan Medical Camp Tarnawa Khanpur</a>
+                                </div>
+                            <div class="footer4">
+                                <p>Phone:03325104888</p>
+                                <p>Email:Hello@Metrix.pk</p>
+                                <a href="">Location: Metrix Pakistan Co-Working Space RankingGrow Tower Main GT Road, near Mandi Mor, Darvesh Harīpur, Haripur, Khyber Pakhtunkhwa 22620</a>
+                                   <div class="social-icons">
+                                    <a href="http://www.facebook.com/"> <i class="fab fa-facebook-square"></i></a>
+                                    <a href="http://www.twiter.com/"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="http://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
+                                    <a href="http://www.youtube.com/"><i class="fab fa-youtube-square"></i></a>
+                                    <a href="http://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>          
+                                   </div>
+                            </div>
+                            <h2 style="color: white; font-family: poppins;" > 2023 Metrix Pakistan – All Rights Reserved </h2>
+                            </footer>
+    
+</body>
+</html>
