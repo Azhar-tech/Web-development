@@ -5,7 +5,7 @@ const weather = document.querySelector(".weather");
 const container = document.querySelector(".card");
 
 search.addEventListener("click", () => {
-    const APIkey = '900acb0532a903a3bf6559ebf15489cf';
+    const APIkey = 'your key';
     const cityName = input.value.trim();
 
     if (cityName === "") return;
